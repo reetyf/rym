@@ -1,9 +1,9 @@
 #!/bin/bash
 
-arr=(Africa Antarctica Asia Europe North-America South-America Oceania)
+arr=("Africa" "Antarctica" "Asia" "Europe" "North-America" "South-America" "Oceania")
 
-for continent in ${arr[@]}:
+for continent in ${arr[@]}
 do
-    python get_chart.py -p 10 -c "$continent" -y "1950-2022"
     echo "Scraping $continent"
+    python get_chart.py -p 15 -c $continent -y "1950-2022"
 done
